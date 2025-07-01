@@ -12,10 +12,10 @@ This project uses a distributed architecture to provide a flexible and accessibl
 graph TD
     A[User] --> B{Web Browser};
     B --> C{Load Balancer};
-    C --> D{Web Server (Nginx)};
-    D --> E{Cloud Server (Nginx + Node&#46;js&#47;Python)};
-    E --> F{Database (PostgreSQL)};
-    F --> G{Caching (Redis)};
+    C --> D{Web Server Nginx};
+    D --> E{Cloud Server Nginx + Node&#46;js&#47;Python};
+    E --> F{Database PostgreSQL};
+    F --> G{Caching Redis};
 ```
 * **Edge Node (RPi5):** Aggregates MAVLink telemetry, camera streams, and handles gimbal control.
 * **Cloud Node:** Serves the web application and acts as a secure relay for data and commands.
