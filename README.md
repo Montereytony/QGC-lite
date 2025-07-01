@@ -13,7 +13,7 @@ graph TD
     A[User] --> B{Web Browser};
     B --> C{Load Balancer};
     C --> D{Web Server (Nginx)};
-    D --> E{"Cloud Server (Nginx + Node.js/Python)"};
+    D --> E{Cloud Server (Nginx + Node&#46;js&#47;Python)};
     E --> F{Database (PostgreSQL)};
     F --> G{Caching (Redis)};
 ```
