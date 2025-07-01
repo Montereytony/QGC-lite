@@ -10,13 +10,12 @@ This project uses a distributed architecture to provide a flexible and accessibl
 
 ```mermaid
 graph TD
-    A[Pixhawk 6C] -->  G[MAVLink via USB/UART] --> B(Raspberry Pi 5);
-    C[2x Arducams] --> H[MIPI CSI] --> B;
-    D[Siyi A8 Mini] --> I[Ethernet/UART] --> B;
-    B --> J[Telemetry & Control (WebSocket)] --> E{Cloud Server (Nginx + Node.js/Python)};
-    B --> K[Video Streams (SRT/RTSP)] --> E;
-    E --> L[GCS Frontend (HTTPS)] --> F((Web Browser));
-    E --> M[Real-time Data (WebSocket)] --> F;
+    A[User] --> B{Web Browser};
+    B --> C{Load Balancer};
+    C --> D{Web Server (Nginx)};
+    D --> E{"Cloud Server (Nginx + Node.js/Python)"};
+    E --> F{Database (PostgreSQL)};
+    F --> G{Caching (Redis)};
 ```
 * **Edge Node (RPi5):** Aggregates MAVLink telemetry, camera streams, and handles gimbal control.
 * **Cloud Node:** Serves the web application and acts as a secure relay for data and commands.
