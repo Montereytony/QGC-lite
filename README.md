@@ -13,7 +13,7 @@ graph TD
     A[Pixhawk 6C] -- MAVLink via USB/UART --> B[Raspberry Pi 5];
     C[2x Arducams] -- MIPI CSI --> B;
     D[Siyi A8 Mini] -- Ethernet/UART --> B;
-    B -- Telemetry & Control WebSocket --> {Cloud Server Nginx + Node.js/Python};
+    B -- Telemetry & Control WebSocket --> G[Cloud Server Nginx + Node.js/Python];
     B -- Video Streams (SRT/RTSP) --> E;
     E -- GCS Frontend (HTTPS) --> F((Web Browser));
     E -- Real-time Data (WebSocket) --> F;
