@@ -10,7 +10,7 @@ This project uses a distributed architecture to provide a flexible and accessibl
 
 ```mermaid
 graph TD
-    A[Pixhawk 6C] -- MAVLink via USB/UART --> B(Raspberry Pi 5);
+    A[Pixhawk 6C] --  MAVLink via USB/UART --> B(Raspberry Pi 5);
     C[2x Arducams] -- MIPI CSI --> B;
     D[Siyi A8 Mini] -- Ethernet/UART --> B;
     B -- Telemetry & Control (WebSocket) --> E{Cloud Server (Nginx + Node.js/Python)};
